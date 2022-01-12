@@ -1,28 +1,13 @@
 import './App.css';
 import React from 'react';
+import Header from './components/header';
+import Grid from './components/grid';
 
 function App() {
   return (
     <>
-      <div className="center-screen">
-        <h1>Noughts and Crosses</h1>
-        <hr />
-      </div>
-      <div className="grid">
-        <div className="grid-inner">
-          <div className="box"></div>
-          <div className="box"></div>
-          <div className="box"></div>
-          <div className="box"></div>
-          <div className="box"></div>
-          <div className="box"></div>
-          <div className="box"></div>
-          <div className="box"></div>
-          <div className="box"></div>
-        </div>
-
-
-      </div>
+      <Header />
+      <Grid />
     </>
   );
 }
