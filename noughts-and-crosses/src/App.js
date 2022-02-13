@@ -1,7 +1,8 @@
 import "./App.css";
 import React from "react";
 import Header from "./components/header";
-import Grid from "./components/grid";
+// import Grid from "./components/grid";1
+import GridAW from "./components/grid-aw";
 
 function App() {
   const grid = [];
@@ -12,7 +13,8 @@ function App() {
   return (
     <>
       <Header />
-      <Grid grid={grid} />
+      {/* <Grid grid={grid} /> */}
+      <GridAW grid={grid} />
     </>
   );
 }
