@@ -70,4 +70,8 @@ h1 {
   height: 100px;
   width: 100px;
   float: left;
+  color:indigo;
+  font-size: xx-large;
+  font-weight: bolder;
+  cursor: pointer;
 }
