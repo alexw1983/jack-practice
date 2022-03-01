@@ -1,20 +1,47 @@
 import "./App.css";
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/header";
-// import Grid from "./components/grid";1
-import GridAW from "./components/grid-aw";
+import Grid from "./components/grid";
 
-function App() {
+const getInitialGridState = () => {
   const grid = [];
 
   for (let i = 0; i < 9; i++) {
-    grid.push({});
+    grid.push({
+      position: i,
+
+      value: "",
+    });
   }
+
+  return grid;
+};
+
+function App() {
+  const [currentTurn, setCurrentTurn] = useState("X");
+  const [grid, setGrid] = useState(getInitialGridState());
+
+  const handleBoxClick = (position) => {
+    const newGrid = grid;
+    for (let i = 0; i < grid.length; i++) {
+      if (i === position) {
+        newGrid[i] = { position: i, value: currentTurn };
+      }
+    }
+
+    setGrid(newGrid);
+
+    if (currentTurn === "X") {
+      setCurrentTurn("O");
+    } else {
+      setCurrentTurn("X");
+    }
+  };
+
   return (
     <>
-      <Header />
-      {/* <Grid grid={grid} /> */}
-      <GridAW grid={grid} />
+      <Header currentTurn={currentTurn} />
+      <Grid grid={grid} onBoxClick={handleBoxClick} />
     </>
   );
 }
