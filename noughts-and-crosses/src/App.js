@@ -25,17 +25,15 @@ function App() {
     const newGrid = grid;
     for (let i = 0; i < grid.length; i++) {
       if (i === position) {
+        if (newGrid[i].value !== "") {
+          return;
+        }
         newGrid[i] = { position: i, value: currentTurn };
       }
     }
-    if (position !== "") {
-      window.alert("Illegal Move");
-    } else {
-      setCurrentTurn(currentTurn);
-    }
 
     setGrid(newGrid);
-  
+
     if (currentTurn === "X") {
       setCurrentTurn("O");
     } else {
