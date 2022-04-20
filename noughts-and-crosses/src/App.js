@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useState } from "react";
 import Header from "./components/header";
 import Grid from "./components/grid";
+import findWinner from "./Winner";
 
 const getInitialGridState = () => {
   const grid = [];
@@ -38,6 +39,12 @@ function App() {
       setCurrentTurn("O");
     } else {
       setCurrentTurn("X");
+    }
+
+    const winner = findWinner(newGrid, position);
+    console.log(winner);
+    if (winner.winnerfound) {
+      alert(winner);
     }
   };
 
