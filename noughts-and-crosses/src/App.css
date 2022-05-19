@@ -62,7 +62,7 @@ h1 {
 
 .grid-inner {
   width: 306px;
-  border: 1px solid black;
+  border: 0px solid black;
 }
 
 .box {
@@ -88,5 +88,8 @@ h1 {
   color: indigo;
   font-size: xx-large;
   font-weight: bolder;
-  cursor: not-allowed;
+}
+
+.New-Game {
+  color: bisque;
 }
