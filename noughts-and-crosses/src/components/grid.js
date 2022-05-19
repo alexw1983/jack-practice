@@ -6,7 +6,7 @@ function Grid(props) {
       <div className="grid-inner">
         {props.grid.map((item, idx) => (
           <div
-            className="box"
+            className={item.value !== "" ? "box-disabled" : "box"}
             onClick={() => props.onBoxClick(item.position)}
             key={`box_${idx}`}
           >
